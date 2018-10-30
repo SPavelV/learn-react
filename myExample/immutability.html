@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no"/>
+  <meta charset="utf-8">
+  <title>Promises</title>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+<h1>Immutability</h1>
+<p>Open the console</p>
+<script type="text/babel">
+  let color_lawn = {
+    title: `lawn`,
+    color: `#00ff00`,
+    rating: 0
+  };
+
+  function rateColor(color, rating) {
+    color.rating = rating;
+    return color;
+  }
+
+  console.log(rateColor(color_lawn, 5).rating);
+  console.log(color_lawn.rating);
+
+  const rateColor2 = function (color, rating) {
+    return Object.assign({}, color, {rating: rating});
+  };
+
+  console.log(rateColor2(color_lawn, 6).rating);
+  console.log(color_lawn.rating);
+
+  const rateColor3 = (color, rating) =>
+    ({
+      ...color,
+      rating
+    });
+
+  const list = [
+    { title: `Rad Red` },
+    { title: `Lawn` },
+    { title: `Party Pink` }
+  ];
+
+  var addColor = function (title, colors) {
+    colors.push({title: title});
+    return colors;
+  };
+
+  console.log(addColor('Glam Green', list).length);
+  console.log(list.length);
+
+  const addColor2 = (title, array) => array.concat({title});
+  console.log(addColor2('Glam Pink', list).length);
+  console.log(list.length);
+
+  const addColor3 = (title, list) => [...list, {title}];
+
+</script>
+</body>
+</html>

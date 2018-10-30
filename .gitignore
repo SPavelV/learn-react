@@ -1,0 +1,60 @@
+syntax: glob
+
+# sass cache
+.sass-cache/*
+
+# A hidden file created by the Mac OS X Finder.
+
+# Backup files left behind by the Emacs editor.
+
+# Lock files used by the Emacs editor.
+.\#*
+
+# Temporary files used by the vim editor.
+.*.swp
+
+# Temporary files used by TestMate
+._*
+
+# Backup files left behind by various editors
+*.bak
+
+# build directories
+
+# XCode user data
+**.pbxuser
+**.mode?v?
+**.perspectivev?
+**.xcuserstate
+**.xccheckout
+**/xcuserdata/*
+
+# AppCode settings
+
+# documentation
+**.docset/*
+**/debug.txt
+
+# for those crazies using svn and hg at the same time
+*.svn*
+
+# Doxygen tagfile output
+**/core-plot-tags.xml
+**/core-plot-touch-tags.xml
+
+node_modules
+.idea/
+*.log
+build
+tmp
+.grunt
+.DS_Store
+psd/
+.vscode/
+*.psd
+*.sublime-project
+*.sublime-workspace
+
+dist/CNAME
+CNAME
+dist.zip
