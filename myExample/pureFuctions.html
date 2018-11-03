@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no"/>
+  <meta charset="utf-8">
+  <title>Promises</title>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+<h1>Functions</h1>
+<p>Open the console</p>
+<script type="text/babel">
+
+  //not pure functions:
+  const frederick = {
+    name: `Frederick Douglass`,
+    canRead: false,
+    canWrite: false
+  };
+
+  function selfEducate() {
+    frederick.canRead = true;
+    frederick.canWrite = true;
+  }
+
+  selfEducate();
+  console.log( frederick );
+
+  const selfEducate2 = person => {
+    person.canRead = true;
+    person.canWrite = true;
+    return person
+  };
+
+  //pure functions:
+  const selfEducate3 = person => ({
+    ...person,
+    canRead: true,
+    canWrite: true
+  });
+
+  //not pure functions:
+
+  function Header(text) {
+    let h1 = document.createElement('h1');
+    h1.innerText = text;
+    document.body.appendChild(h1)
+  }
+
+  Header('Header() caused side effects');
+
+</script>
+</body>
+</html>

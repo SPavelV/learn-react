@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no"/>
+  <meta charset="utf-8">
+  <title>Promises</title>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+<body>
+<h1>Transforming data</h1>
+<p>Open the console</p>
+<script type="text/babel">
+  const schools = [
+    'Yorktown',
+    'Washington & Lee',
+    'Wakefield'
+  ];
+
+  console.log(schools.join(", "));
+
+  const wSchools = schools.filter(school => school[0] === 'W');
+  console.log(wSchools);
+
+  const cutSchool = (cut, list) =>
+    list.filter(school => school !== cut);
+
+  console.log(cutSchool('Washington & Lee', schools).join(' * '));
+  console.log(schools.join('\n'));
+
+  const highSchools = schools.map(school => `${school} High School`);
+
+  console.log(highSchools.join('\n'));
+
+  const highSchools2 = schools.map(school => ({name: school}));
+
+  console.log(highSchools2);
+
+  const editName = (oldName, name, arr) =>
+    arr.map(item => {
+      if (item.name === oldName) {
+        return {
+          ...item,
+          name
+        }
+      } else {
+        return item;
+      }
+    });
+
+  const editName2 = (oldName, name, arr) =>
+    arr.map(item => (item.name === oldName) ?
+      ({...item, name}) :
+      item
+    );
+
+  let schools2 = [
+    {name: 'Yorktown'},
+    {name: 'Stratford'},
+    {name: 'Washington & Lee'},
+    {name: 'WakeField'}
+  ];
+
+  let updatedSchools = editName('Stratford', 'HB Woodlawn', schools2);
+
+  console.log(updatedSchools[1]);
+  console.log(schools2[1]);
+
+  const schools3 = {
+    'Yorktown': 10,
+    'Washington & Lee': 2,
+    'Wakefield': 5
+  };
+
+  const schoolArray = Object.keys(schools3).map(key =>
+    ({
+      name: key,
+      wins: schools3[key]
+    })
+  );
+
+  console.log(schoolArray);
+</script>
+</body>
+</html>
