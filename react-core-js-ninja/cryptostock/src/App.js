@@ -7,15 +7,15 @@ import Ticker from "./Ticker/Ticker";
 class App extends Component {
 
   state = {
-    selectedPairs: ['btc_usd'],
+    activePairs: [],
     value: 12
   };
 
   handleCheckbox = currency => event => {
     const { checked } = event.target;
 
-    this.setState(({selectedPairs}) => {
-      let pairs = [...selectedPairs];
+    this.setState(({activePairs}) => {
+      let pairs = [...activePairs];
 
       if(checked) {
         pairs.push(currency);
@@ -24,7 +24,7 @@ class App extends Component {
       }
 
       return {
-        selectedPairs: pairs
+        activePairs: pairs
       }
     })
   };
@@ -42,7 +42,7 @@ class App extends Component {
         </aside>
 
         <main>
-          {this.state.selectedPairs.map(pair => <Ticker key={pair} pair={pair}/>)}
+          {currencies.map(pair => <Ticker key={pair} pair={pair} isActive={this.state.activePairs.includes(pair)}/>)}
         </main>
       </div>
     );
