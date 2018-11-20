@@ -14,8 +14,18 @@
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 
 <script>
+  // React.DOM.H1(null, 'Baked Salmon');
 
-  var items = [
+  // React.DOM.ul({'className': 'ingredients'},
+  //   React.DOM.li(null, '1 lb Salmon'),
+  //   React.DOM.li(null, '1 cup Pine Nuts'),
+  //   React.DOM.li(null, '2 cups Butter Lettuce'),
+  //   React.DOM.li(null, '1 Yellow Squash'),
+  //   React.DOM.li(null, '1/2 cup Olive Oil'),
+  //   React.DOM.li(null, '3 cloves of Garlic'),
+  // )
+
+  const items = [
     '1 lb Salmon',
     '1 cup Pine Nuts',
     '2 cups Butter, Lettuce',
@@ -24,19 +34,15 @@
     '3 cloves of Garlic'
   ];
 
-
-  const listIngredients = React.createElement(
-    'ul',
-    {className: 'ingredients'},
-    items.map((ingredient, i) =>
-      React.createElement('li', {key: i}, ingredient)
+  const list = React.DOM.ul(
+    { className: 'ingredients' },
+    items.map((ingredient, key) =>
+      React.DOM.li({key}, ingredient)
     )
   );
 
-  ReactDOM.render(listIngredients, document.getElementById('react-container'));
-
   ReactDOM.render(
-    ingredients,
+    list,
     document.getElementById('react-container')
   )
 

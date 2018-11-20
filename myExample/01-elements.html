@@ -22,7 +22,7 @@
     //
     // ReactDOM.render(dish, document.getElementById('react-container'));
 
-    React.createElement('section', {id: 'baked-salmon'},
+    const pages = React.createElement('section', {id: 'baked-salmon'},
         React.createElement('h1', null, 'Baked Salmon'),
         React.createElement('ul', {'className': 'ingredients'},
             React.createElement('li', null, '1 lb Salmon'),
@@ -42,6 +42,8 @@
             React.createElement('p', null, 'Remove from oven and let cool for 15 ....')
         )
     )
+
+    ReactDOM.render(pages, document.getElementById('react-container'));
 
 
 </script>

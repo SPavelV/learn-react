@@ -15,7 +15,19 @@
 
 <script>
 
-  var items = [
+  class IngredientList extends React.Component {
+    renderListItem(ingredient, i) {
+      return React.createElement('li', { key: i }, ingredient)
+    }
+
+    render() {
+      return React.createElement('ul', {className: 'ingredients'},
+        this.props.items.map(this.renderListItem)
+      )
+    }
+  }
+
+  const items = [
     '1 lb Salmon',
     '1 cup Pine Nuts',
     '2 cups Butter, Lettuce',
@@ -24,22 +36,10 @@
     '3 cloves of Garlic'
   ];
 
-
-  const listIngredients = React.createElement(
-    'ul',
-    {className: 'ingredients'},
-    items.map((ingredient, i) =>
-      React.createElement('li', {key: i}, ingredient)
-    )
-  );
-
-  ReactDOM.render(listIngredients, document.getElementById('react-container'));
-
-  ReactDOM.render(
-    ingredients,
+  ReactDom.render(
+    React.createElement(IngredientList, {items}, null),
     document.getElementById('react-container')
   )
-
 </script>
 
 </body>
