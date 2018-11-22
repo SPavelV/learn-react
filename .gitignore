@@ -58,3 +58,49 @@ psd/
 dist/CNAME
 CNAME
 dist.zip
+
+# ignore create-react-app
+
+# dependencies
+/myExample/intro-webpack/node_modules/
+/myExample/intro-webpack/.pnp
+/myExample/intro-webpack/.pnp.js
+
+# testing
+/myExample/intro-webpack//coverage
+
+# production
+/myExample/intro-webpack/build
+
+# misc
+/myExample/intro-webpack/.DS_Store
+/myExample/intro-webpack/.env.local
+/myExample/intro-webpack/.env.development.local
+/myExample/intro-webpack/.env.test.local
+/myExample/intro-webpack/.env.production.local
+
+/myExample/intro-webpack/npm-debug.log*
+/myExample/intro-webpack/yarn-debug.log*
+/myExample/intro-webpack/yarn-error.log*
+
+# dependencies
+/recipe-app2/node_modules
+/recipe-app2/.pnp
+/recipe-app2/.pnp.js
+
+# testing
+/recipe-app2/coverage
+
+# production
+/recipe-app2/build
+
+# misc
+/recipe-app2/.DS_Store
+/recipe-app2/.env.local
+/recipe-app2/.env.development.local
+/recipe-app2/.env.test.local
+/recipe-app2/.env.production.local
+
+/recipe-app2/npm-debug.log*
+/recipe-app2/yarn-debug.log*
+/recipe-app2/yarn-error.log*
