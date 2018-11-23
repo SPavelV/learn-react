@@ -104,3 +104,26 @@ dist.zip
 /recipe-app2/npm-debug.log*
 /recipe-app2/yarn-debug.log*
 /recipe-app2/yarn-error.log*
+
+
+# dependencies color-organizer
+/color-organizer/node_modules
+/color-organizer/.pnp
+/color-organizer/.pnp.js
+
+# testing
+/color-organizer/coverage
+
+# production
+/color-organizer/build
+
+# misc
+/color-organizer/.DS_Store
+/color-organizer/.env.local
+/color-organizer/.env.development.local
+/color-organizer/.env.test.local
+/color-organizer/.env.production.local
+
+/color-organizer/npm-debug.log*
+/color-organizer/yarn-debug.log*
+/color-organizer/yarn-error.log*
