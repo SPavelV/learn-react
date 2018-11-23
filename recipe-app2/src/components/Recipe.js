@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IngredientList from './IngredientList';
 import Instructions from './Instructions';
 
