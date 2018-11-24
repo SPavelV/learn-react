@@ -6,6 +6,15 @@ class AddColorForm extends Component {
     this.submit = this.submit.bind(this);
   }
 
+  submit(e) {
+    const {_title, _color} = this.refs;
+    e.preventDefault();
+    alert(`New Color: ${_title.value} ${_color.value}`);
+    _title.value = '';
+    _color.value = '#000000';
+    _title.focus();
+  }
+
   render() {
     return (
       <form onSubmit={e=>e.preventDefault()}>
