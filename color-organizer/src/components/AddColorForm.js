@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import PropTypes from 'prop-types'
 
 class AddColorForm extends Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class AddColorForm extends Component {
   submit(e) {
     const {_title, _color} = this.refs;
     e.preventDefault();
-    alert(`New Color: ${_title.value} ${_color.value}`);
+    this.props.onNewColor(_title.value, _color.value);
     _title.value = '';
     _color.value = '#000000';
     _title.focus();
@@ -26,5 +27,14 @@ class AddColorForm extends Component {
     )
   }
 }
+
+AddColorForm.propTypes ={
+  onNewColor: PropTypes.func
+};
+
+AddColorForm.defaultProps ={
+  onNewColor: f=>f
+};
+
 
 export default AddColorForm;
