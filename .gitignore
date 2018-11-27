@@ -127,3 +127,27 @@ dist.zip
 /color-organizer/npm-debug.log*
 /color-organizer/yarn-debug.log*
 /color-organizer/yarn-error.log*
+
+
+# dependencies news-app
+/news-app/node_modules
+/news-app/.pnp
+/news-app/.pnp.js
+
+# testing
+/news-app/coverage
+
+# production
+/news-app/build
+
+# misc
+/news-app/.DS_Store
+/news-app/.env.local
+/news-app/.env.development.local
+/news-app/.env.test.local
+/news-app/.env.production.local
+
+/news-app/npm-debug.log*
+/news-app/yarn-debug.log*
+/news-app/yarn-error.log*
+
