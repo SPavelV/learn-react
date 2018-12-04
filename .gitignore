@@ -151,3 +151,26 @@ dist.zip
 /news-app/yarn-debug.log*
 /news-app/yarn-error.log*
 
+# dependencies fake-members
+/fake-members/node_modules
+/fake-members/.pnp
+/fake-members/.pnp.js
+
+# testing
+/fake-members/coverage
+
+# production
+/fake-members/build
+
+# misc
+/fake-members/.DS_Store
+/fake-members/.env.local
+/fake-members/.env.development.local
+/fake-members/.env.test.local
+/fake-members/.env.production.local
+
+/fake-members/npm-debug.log*
+/fake-members/yarn-debug.log*
+/fake-members/yarn-error.log*
+
+
