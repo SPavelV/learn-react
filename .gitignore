@@ -173,4 +173,26 @@ dist.zip
 /fake-members/yarn-debug.log*
 /fake-members/yarn-error.log*
 
+# dependencies clock
+/clock/node_modules
+/clock/.pnp
+/clock/.pnp.js
+
+# testing
+/clock/coverage
+
+# production
+/clock/build
+
+# misc
+/clock/.DS_Store
+/clock/.env.local
+/clock/.env.development.local
+/clock/.env.test.local
+/clock/.env.production.local
+
+/clock/npm-debug.log*
+/clock/yarn-debug.log*
+/clock/yarn-error.log*
+
 

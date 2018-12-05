@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import fetch from 'isomorphic-fetch';
 
 const getFakeMembers = count => new Promise((resolves, rejects) => {
   const api = `https://api.randomuser.me/?nat=US&results=${count}`;
@@ -29,38 +29,35 @@ class App extends Component {
     super();
     this.state = {
       members: [],
-      loading: false,
-      error: null
+      loaded: false,
+      loading: false
     }
   }
 
   componentWillMount() {
     this.setState({loading: true});
-    getFakeMembers(this.props.count).then(
-      members => {
-        this.setState({members, loading: false})
-      },
-      error => {
-        this.setState({error, loading: false})
-      }
-    )
+    fetch('https://randomuser.me/api/?results=10')
+      .then(response => response.json())
+      .then(obj => obj.results)
+      .then(data => this.setState({
+          loaded: true,
+          loading: false,
+          data
+      }))
   }
 
   render() {
-    const { members, loading, error} = this.state;
-    return (
-      <div className="member-list">
-        {(loading) ?
-          <span>Loading Members</span> :
-          (members.length) ?
-            members.map((user, i) =>
-              <Member key={i} {...user}/>
-            ) :
-            <span>0 members loaded...</span>
-        }
-        {(error) ? <p>Error Loading Members: error</p> : ""}
-      </div>
-    );
+    const { data, loading, loaded} = this.state;
+    return (loading) ?
+      <div>Loading...</div> :
+      <ol className="people-list">
+        {data.map((person, i) =>  {
+          const {first, last} = person.name;
+          return <li key={i}>{first} {last}</li>
+        })}
+      </ol>
+
+
   }
 }
 
